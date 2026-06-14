@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Self-host PP Neue Montreal or closest available — use next/font/local */
+:root {
+  --font-neue: 'PP Neue Montreal', 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #F2F4F5;
+  color: #121212;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-neue), sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/* Hero heading animation */
+.hero-heading {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-heading.hero-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade up animation for scroll-triggered elements */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fade-up.fade-up-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation menu animations */
+.nav-menu-closed {
+  opacity: 0;
+  transform: scaleY(0.8);
+  pointer-events: none;
+}
+
+.nav-menu-open {
+  opacity: 1;
+  transform: scaleY(1);
+  pointer-events: auto;
+}
+
+/* Slow continuous rotation for asterisk */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hero-heading,
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
