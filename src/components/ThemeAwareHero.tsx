@@ -3,14 +3,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { DitheringShader } from '@/components/ui/dithering-shader';
 
-interface HeroProps {
-  sphereColor?: string;
-}
-
-export default function Hero({ sphereColor }: HeroProps) {
+export default function ThemeAwareHero() {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const [dimensions, setDimensions] = useState({ width: 600, height: 600 });
   const containerRef = useRef<HTMLElement>(null);
+  const [sphereColor, setSphereColor] = useState('#000000');
 
   useEffect(() => {
     if (!headingRef.current) return;
@@ -32,15 +29,33 @@ export default function Hero({ sphereColor }: HeroProps) {
     return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
-  // Get sphere color from CSS variable if not provided
+  // Get sphere color from CSS variable based on theme
   useEffect(() => {
     if (!containerRef.current) return;
-    const computedColor = sphereColor || 
-      getComputedStyle(containerRef.current).getPropertyValue('--sphere-color').trim() ||
-      '#000000';
-  }, [sphereColor]);
+    
+    const updateSphereColor = () => {
+      const color = getComputedStyle(containerRef.current!).getPropertyValue('--sphere-color').trim();
+      if (color) {
+        setSphereColor(color);
+      }
+    };
 
-  const finalSphereColor = sphereColor || '#000000';
+    updateSphereColor();
+    
+    // Use MutationObserver to detect theme changes
+    const observer = new MutationObserver(updateSphereColor);
+    
+    // Observe parent for class changes
+    if (containerRef.current.parentElement) {
+      observer.observe(containerRef.current.parentElement, {
+        attributes: true,
+        attributeFilter: ['class'],
+        subtree: true,
+      });
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section 
@@ -50,12 +65,13 @@ export default function Hero({ sphereColor }: HeroProps) {
       {/* 21st.dev Sphere — Color adapts to theme */}
       <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
         <DitheringShader 
+          key={sphereColor}
           width={dimensions.width}
           height={dimensions.height}
           shape="sphere"
           type="random"
           colorBack="transparent"
-          colorFront={finalSphereColor}
+          colorFront={sphereColor}
           pxSize={2}
           speed={1.5}
         />

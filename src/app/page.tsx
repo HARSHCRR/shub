@@ -1,19 +1,14 @@
-import Nav      from '@/components/Nav';
-import Hero     from '@/components/Hero';
-import Work     from '@/components/Work';
-import Services from '@/components/Services';
-import CTA      from '@/components/CTA';
-import Footer   from '@/components/Footer';
+'use client';
+
+import { ThemeComparison } from '@/components/ui/theme-comparison';
+import PageContent from '@/components/PageContent';
 
 export default function Home() {
   return (
-    <main>
-      <Nav />
-      <Hero />
-      <Work />
-      <Services />
-      <CTA />
-      <Footer />
+    <main className="min-h-screen">
+      <ThemeComparison>
+        <PageContent />
+      </ThemeComparison>
     </main>
   );
 }

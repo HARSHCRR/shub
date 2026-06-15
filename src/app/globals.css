@@ -25,6 +25,62 @@ body {
   overflow-x: hidden;
 }
 
+/* Light Theme */
+.theme-light {
+  --bg: #ECECEC;
+  --fg: #000000;
+  --card: #FFFFFF;
+  --border: rgba(0, 0, 0, 0.15);
+  --highlight: #666666;
+  --dark-card: #E5E5E5;
+  --sphere-color: #000000;
+}
+
+.theme-light {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.theme-light .bg-background { background-color: var(--bg) !important; }
+.theme-light .bg-foreground { background-color: var(--fg) !important; }
+.theme-light .bg-darkCard { background-color: var(--dark-card) !important; }
+.theme-light .bg-white { background-color: var(--card) !important; }
+
+.theme-light .text-background { color: var(--bg) !important; }
+.theme-light .text-foreground { color: var(--fg) !important; }
+.theme-light .text-white { color: var(--fg) !important; }
+.theme-light .text-highlight { color: var(--highlight) !important; }
+
+.theme-light .border-white { border-color: var(--border) !important; }
+
+/* Dark Theme */
+.theme-dark {
+  --bg: #000000;
+  --fg: #FFFFFF;
+  --card: #171717;
+  --border: rgba(255, 255, 255, 0.15);
+  --highlight: #999999;
+  --dark-card: #1C1C1E;
+  --sphere-color: #FFFFFF;
+}
+
+.theme-dark {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.theme-dark .bg-background { background-color: var(--bg) !important; }
+.theme-dark .bg-foreground { background-color: var(--fg) !important; }
+.theme-dark .bg-darkCard { background-color: var(--dark-card) !important; }
+.theme-dark .bg-white { background-color: var(--card) !important; }
+
+.theme-dark .text-background { color: var(--bg) !important; }
+.theme-dark .text-foreground { color: var(--fg) !important; }
+.theme-dark .text-white { color: var(--fg) !important; }
+.theme-dark .text-highlight { color: var(--highlight) !important; }
+
+.theme-dark .border-white { border-color: var(--border) !important; }
+
 /* Hero heading animation */
 .hero-heading {
   opacity: 0;
