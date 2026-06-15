@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { DitheringShader } from '@/components/ui/dithering-shader';
 
 export default function Hero() {
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const [dimensions, setDimensions] = useState({ width: 600, height: 600 });
 
   useEffect(() => {
     if (!headingRef.current) return;
@@ -12,15 +14,33 @@ export default function Hero() {
     setTimeout(() => {
       headingRef.current?.classList.add('hero-visible');
     }, 200);
+
+    // Set responsive dimensions for sphere
+    const updateDimensions = () => {
+      const size = Math.min(window.innerWidth * 0.4, window.innerHeight * 0.5, 600);
+      setDimensions({ width: size, height: size });
+    };
+
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+
+    return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-background flex items-end pb-8 px-[4vw]">
-      {/* 3D Robot Placeholder — Replace with Spline scene when available */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 flex items-center justify-center opacity-10">
-          <span className="text-[20vw] text-foreground">✦</span>
-        </div>
+      {/* 21st.dev Sphere — Solid Black, Centered */}
+      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
+        <DitheringShader 
+          width={dimensions.width}
+          height={dimensions.height}
+          shape="sphere"
+          type="random"
+          colorBack="transparent"
+          colorFront="#000000"
+          pxSize={2}
+          speed={1.5}
+        />
       </div>
 
       {/* Hero Text */}
