@@ -24,7 +24,7 @@ export default function Footer() {
           <a
             key={link}
             href="#"
-            className="text-white text-eyebrow uppercase tracking-widest px-5 py-2.5 rounded-full hover:bg-white/10 transition-colors duration-200"
+            className="text-foreground text-eyebrow uppercase tracking-widest px-5 py-2.5 rounded-full hover:bg-muted/20 transition-colors duration-200"
           >
             {link}
           </a>
@@ -34,7 +34,7 @@ export default function Footer() {
       {/* Social links */}
       <div className="relative z-10 flex gap-6 mt-2">
         {socialLinks.map((s) => (
-          <a key={s} href="#" className="text-eyebrow text-highlight hover:text-foreground transition-colors duration-200">
+          <a key={s} href="#" className="text-eyebrow text-muted hover:text-foreground transition-colors duration-200">
             {s}
           </a>
         ))}

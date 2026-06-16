@@ -105,11 +105,11 @@ export function ThemeComparison({ children }: ThemeComparisonProps) {
 
       {/* Divider Line & Handle */}
       <div
-        className="absolute top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-white to-transparent pointer-events-none z-50"
+        className="absolute top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-foreground to-transparent pointer-events-none z-50 opacity-50"
         style={{ left: `${dividerPosition}%`, transform: 'translateX(-50%)' }}
       >
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-grab active:cursor-grabbing pointer-events-auto"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-card rounded-full shadow-lg flex items-center justify-center cursor-grab active:cursor-grabbing pointer-events-auto border-2 border-foreground"
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
           role="slider"
@@ -119,7 +119,7 @@ export function ThemeComparison({ children }: ThemeComparisonProps) {
           aria-valuemax={100}
           tabIndex={0}
         >
-          <GripVertical className="w-6 h-6 text-gray-800" />
+          <GripVertical className="w-6 h-6 text-foreground" />
         </div>
       </div>
     </div>

@@ -21,12 +21,12 @@ export default function Nav() {
 
       {/* Right side */}
       <div className="flex items-center gap-3">
-        <button className="hidden md:flex items-center gap-2 bg-foreground text-white text-eyebrow px-5 py-2.5 rounded-full hover:opacity-80 transition-opacity duration-200">
+        <button className="hidden md:flex items-center gap-2 bg-foreground text-primary-foreground text-eyebrow px-5 py-2.5 rounded-full hover:opacity-80 transition-opacity duration-200">
           Chat with SOHub
         </button>
         <button
           onClick={toggleMenu}
-          className="bg-foreground text-white text-eyebrow px-5 py-2.5 rounded-full hover:opacity-80 transition-opacity duration-200"
+          className="bg-foreground text-primary-foreground text-eyebrow px-5 py-2.5 rounded-full hover:opacity-80 transition-opacity duration-200"
         >
           {menuOpen ? 'Close' : 'Menu'}
         </button>
@@ -35,7 +35,7 @@ export default function Nav() {
       {/* Dropdown Menu */}
       <div
         ref={menuRef}
-        className={`nav-menu absolute top-full right-[4vw] mt-2 bg-white rounded-2xl shadow-xl p-8 w-64 origin-top-right transition-all duration-400 ${menuOpen ? 'nav-menu-open' : 'nav-menu-closed'}`}
+        className={`nav-menu absolute top-full right-[4vw] mt-2 bg-card rounded-2xl shadow-xl p-8 w-64 origin-top-right transition-all duration-400 ${menuOpen ? 'nav-menu-open' : 'nav-menu-closed'}`}
       >
         <ul className="flex flex-col gap-4">
           {navLinks.map((link) => (

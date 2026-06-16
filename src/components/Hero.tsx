@@ -70,7 +70,7 @@ export default function Hero({ sphereColor }: HeroProps) {
       </h1>
 
       {/* Scroll hint */}
-      <span className="absolute bottom-8 right-[4vw] text-eyebrow text-highlight uppercase tracking-widest z-10">
+      <span className="absolute bottom-8 right-[4vw] text-eyebrow text-muted uppercase tracking-widest z-10">
         Scroll
       </span>
     </section>

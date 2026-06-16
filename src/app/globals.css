@@ -27,57 +27,89 @@ body {
 
 /* Light Theme */
 .theme-light {
-  --bg: #ECECEC;
-  --fg: #000000;
+  --background: #ECECEC;
+  --foreground: #000000;
   --card: #FFFFFF;
+  --card-foreground: #000000;
   --border: rgba(0, 0, 0, 0.15);
-  --highlight: #666666;
-  --dark-card: #E5E5E5;
+  --muted: #666666;
+  --muted-foreground: #666666;
+  --primary: #000000;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E5E5E5;
+  --secondary-foreground: #000000;
   --sphere-color: #000000;
 }
 
 .theme-light {
-  background-color: var(--bg);
-  color: var(--fg);
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
-.theme-light .bg-background { background-color: var(--bg) !important; }
-.theme-light .bg-foreground { background-color: var(--fg) !important; }
-.theme-light .bg-darkCard { background-color: var(--dark-card) !important; }
+.theme-light .bg-background { background-color: var(--background) !important; }
+.theme-light .bg-foreground { background-color: var(--foreground) !important; }
+.theme-light .bg-card { background-color: var(--card) !important; }
+.theme-light .bg-primary { background-color: var(--primary) !important; }
+.theme-light .bg-secondary { background-color: var(--secondary) !important; }
+.theme-light .bg-muted { background-color: var(--muted) !important; }
+.theme-light .bg-darkCard { background-color: var(--secondary) !important; }
 .theme-light .bg-white { background-color: var(--card) !important; }
 
-.theme-light .text-background { color: var(--bg) !important; }
-.theme-light .text-foreground { color: var(--fg) !important; }
-.theme-light .text-white { color: var(--fg) !important; }
-.theme-light .text-highlight { color: var(--highlight) !important; }
+.theme-light .text-background { color: var(--background) !important; }
+.theme-light .text-foreground { color: var(--foreground) !important; }
+.theme-light .text-card-foreground { color: var(--card-foreground) !important; }
+.theme-light .text-primary { color: var(--primary) !important; }
+.theme-light .text-primary-foreground { color: var(--primary-foreground) !important; }
+.theme-light .text-muted { color: var(--muted) !important; }
+.theme-light .text-muted-foreground { color: var(--muted-foreground) !important; }
+.theme-light .text-white { color: var(--foreground) !important; }
+.theme-light .text-highlight { color: var(--muted) !important; }
 
+.theme-light .border { border-color: var(--border) !important; }
 .theme-light .border-white { border-color: var(--border) !important; }
 
 /* Dark Theme */
 .theme-dark {
-  --bg: #000000;
-  --fg: #FFFFFF;
+  --background: #000000;
+  --foreground: #FFFFFF;
   --card: #171717;
+  --card-foreground: #FFFFFF;
   --border: rgba(255, 255, 255, 0.15);
-  --highlight: #999999;
-  --dark-card: #1C1C1E;
+  --muted: #999999;
+  --muted-foreground: #999999;
+  --primary: #FFFFFF;
+  --primary-foreground: #000000;
+  --secondary: #1C1C1E;
+  --secondary-foreground: #FFFFFF;
   --sphere-color: #FFFFFF;
 }
 
 .theme-dark {
-  background-color: var(--bg);
-  color: var(--fg);
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
-.theme-dark .bg-background { background-color: var(--bg) !important; }
-.theme-dark .bg-foreground { background-color: var(--fg) !important; }
-.theme-dark .bg-darkCard { background-color: var(--dark-card) !important; }
+.theme-dark .bg-background { background-color: var(--background) !important; }
+.theme-dark .bg-foreground { background-color: var(--foreground) !important; }
+.theme-dark .bg-card { background-color: var(--card) !important; }
+.theme-dark .bg-primary { background-color: var(--primary) !important; }
+.theme-dark .bg-secondary { background-color: var(--secondary) !important; }
+.theme-dark .bg-muted { background-color: var(--muted) !important; }
+.theme-dark .bg-darkCard { background-color: var(--secondary) !important; }
 .theme-dark .bg-white { background-color: var(--card) !important; }
 
-.theme-dark .text-background { color: var(--bg) !important; }
-.theme-dark .text-foreground { color: var(--fg) !important; }
-.theme-dark .text-white { color: var(--fg) !important; }
-.theme-dark .text-highlight { color: var(--highlight) !important; }
+.theme-dark .text-background { color: var(--background) !important; }
+.theme-dark .text-foreground { color: var(--foreground) !important; }
+.theme-dark .text-card-foreground { color: var(--card-foreground) !important; }
+.theme-dark .text-primary { color: var(--primary) !important; }
+.theme-dark .text-primary-foreground { color: var(--primary-foreground) !important; }
+.theme-dark .text-muted { color: var(--muted) !important; }
+.theme-dark .text-muted-foreground { color: var(--muted-foreground) !important; }
+.theme-dark .text-white { color: var(--foreground) !important; }
+.theme-dark .text-highlight { color: var(--muted) !important; }
+
+.theme-dark .border { border-color: var(--border) !important; }
+.theme-dark .border-white { border-color: var(--border) !important; }
 
 .theme-dark .border-white { border-color: var(--border) !important; }
 

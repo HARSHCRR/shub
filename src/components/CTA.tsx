@@ -11,13 +11,13 @@ export default function CTA() {
       </div>
 
       <FadeUp className="relative z-10 max-w-2xl">
-        <span className="text-eyebrow text-highlight uppercase tracking-widest">Let's Talk</span>
+        <span className="text-eyebrow text-muted uppercase tracking-widest">Let's Talk</span>
         <h2 className="text-section font-medium text-foreground mt-2 mb-6">
           Ready to build something great?
         </h2>
         <a
           href="#"
-          className="inline-block bg-foreground text-white text-body px-8 py-4 rounded-full hover:opacity-80 transition-opacity duration-200"
+          className="inline-block bg-foreground text-primary-foreground text-body px-8 py-4 rounded-full hover:opacity-80 transition-opacity duration-200"
         >
           Book a Call
         </a>

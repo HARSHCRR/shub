@@ -45,12 +45,15 @@ export default function ThemeAwareHero() {
     // Use MutationObserver to detect theme changes
     const observer = new MutationObserver(updateSphereColor);
     
-    // Observe parent for class changes
-    if (containerRef.current.parentElement) {
-      observer.observe(containerRef.current.parentElement, {
+    // Observe the closest theme container
+    let themeContainer = containerRef.current.closest('.theme-light, .theme-dark');
+    if (!themeContainer) themeContainer = containerRef.current.parentElement;
+    
+    if (themeContainer) {
+      observer.observe(themeContainer, {
         attributes: true,
         attributeFilter: ['class'],
-        subtree: true,
+        subtree: false,
       });
     }
 
@@ -65,7 +68,7 @@ export default function ThemeAwareHero() {
       {/* 21st.dev Sphere — Color adapts to theme */}
       <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
         <DitheringShader 
-          key={sphereColor}
+          key={`sphere-${sphereColor}`}
           width={dimensions.width}
           height={dimensions.height}
           shape="sphere"
@@ -86,7 +89,7 @@ export default function ThemeAwareHero() {
       </h1>
 
       {/* Scroll hint */}
-      <span className="absolute bottom-8 right-[4vw] text-eyebrow text-highlight uppercase tracking-widest z-10">
+      <span className="absolute bottom-8 right-[4vw] text-eyebrow text-muted uppercase tracking-widest z-10">
         Scroll
       </span>
     </section>

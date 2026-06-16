@@ -16,7 +16,7 @@ export default function Work() {
       <FadeUp className="mb-16">
         <h2 className="text-section font-medium text-foreground max-w-3xl">
           We are a{' '}
-          <span className="text-highlight">diligent</span>{' '}
+          <span className="text-muted">diligent</span>{' '}
           team that crafts digital experiences.
         </h2>
       </FadeUp>
@@ -36,14 +36,14 @@ export default function Work() {
                 {/* Hover overlay meta */}
                 <div className="absolute bottom-4 left-4 flex items-center gap-3">
                   {/* Arrow — translates in on hover */}
-                  <span className="text-white text-lg -translate-x-4 opacity-0 transition-all duration-300 ease-quart-out group-hover:translate-x-0 group-hover:opacity-100">
+                  <span className="text-foreground text-lg -translate-x-4 opacity-0 transition-all duration-300 ease-quart-out group-hover:translate-x-0 group-hover:opacity-100">
                     →
                   </span>
-                  <h3 className="text-white font-medium text-xl">{project.title}</h3>
+                  <h3 className="text-foreground font-medium text-xl">{project.title}</h3>
                 </div>
               </div>
               <div className="mt-3 flex justify-between items-center">
-                <span className="text-eyebrow text-highlight uppercase tracking-widest">
+                <span className="text-eyebrow text-muted uppercase tracking-widest">
                   {project.category}
                 </span>
               </div>
